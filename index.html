@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Tecretail ERP</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/9.1.6/marked.min.js"></script>
+  <style>
+    body { font-family: sans-serif; max-width: 900px; margin: 0 auto; padding: 2rem; }
+  </style>
+</head>
+<body>
+  <div id="content"></div>
+  <script>
+    const path = location.pathname.endsWith('/') 
+      ? location.pathname + 'index.md' 
+      : location.pathname + '/index.md';
+    fetch(path)
+      .then(r => r.text())
+      .then(md => document.getElementById('content').innerHTML = marked.parse(md));
+  </script>
+</body>
+</html>
