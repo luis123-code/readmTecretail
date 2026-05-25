@@ -1,0 +1,3 @@
+# Paneles laterales
+
+Escribe tu contenido aquí...
